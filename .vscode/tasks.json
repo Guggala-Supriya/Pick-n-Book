@@ -1,0 +1,107 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PicknBook: restore backend",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "restore"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/picknbook_backend (4) - Copy/picknbook_backend (2) - Copy/picknbook_backend/PickNBook.Api"
+      },
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "picknbook-setup"
+      }
+    },
+    {
+      "label": "PicknBook: install frontend",
+      "type": "process",
+      "command": "npm.cmd",
+      "args": [
+        "install"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/travel 1/travel"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "picknbook-setup"
+      }
+    },
+    {
+      "label": "PicknBook: first-time setup",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "PicknBook: restore backend",
+        "PicknBook: install frontend"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "PicknBook: run backend",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "watch",
+        "run",
+        "--launch-profile",
+        "http"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/picknbook_backend (4) - Copy/picknbook_backend (2) - Copy/picknbook_backend/PickNBook.Api"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "picknbook-dev"
+      }
+    },
+    {
+      "label": "PicknBook: run frontend",
+      "type": "process",
+      "command": "npm.cmd",
+      "args": [
+        "start"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/travel 1/travel"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "picknbook-dev"
+      }
+    },
+    {
+      "label": "PicknBook: run full stack",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "PicknBook: run backend",
+        "PicknBook: run frontend"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PicknBook: setup + run full stack",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "PicknBook: first-time setup",
+        "PicknBook: run full stack"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

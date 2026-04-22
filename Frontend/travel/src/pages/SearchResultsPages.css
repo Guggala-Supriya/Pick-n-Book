@@ -1,0 +1,153 @@
+.srp-page {
+  min-height: calc(100vh - 76px);
+  padding: 44px 20px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(33, 96, 178, 0.12),
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(23, 66, 121, 0.14),
+      transparent 42%
+    ),
+    #f7fafc;
+  box-sizing: border-box;
+}
+
+.srp-shell {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.srp-panel {
+  background: #ffffff;
+  border: 1px solid #d4dfec;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(21, 44, 73, 0.12);
+}
+
+.srp-header {
+  padding: 30px 34px;
+  background: linear-gradient(135deg, #14345d, #194c8f);
+  color: #ffffff;
+}
+
+.srp-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 10.8px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.srp-header h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.07vw, 1.8rem);
+  font-weight: 700;
+}
+
+.srp-route {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(0.945rem, 1.8vw, 1.17rem);
+  font-weight: 600;
+}
+
+.srp-route-city {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.srp-route-arrow {
+  font-size: 0.855rem;
+  font-weight: 500;
+  opacity: 0.86;
+}
+
+.srp-body {
+  padding: 30px 34px 34px;
+}
+
+.srp-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.srp-card {
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid #e1e9f3;
+  background: linear-gradient(180deg, #fdfdfd, #f6f9fe);
+}
+
+.srp-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.738rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a708c;
+}
+
+.srp-value {
+  margin: 0;
+  font-size: 0.972rem;
+  color: #102644;
+  font-weight: 600;
+}
+
+.srp-muted {
+  margin: 18px 0 0;
+  color: #4e627d;
+  font-size: 0.846rem;
+}
+
+.srp-actions {
+  margin-top: 24px;
+  display: flex;
+}
+
+.srp-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 20px;
+  background: #194c8f;
+  color: #ffffff;
+  font-size: 0.855rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.srp-button:hover {
+  background: #16437f;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .srp-page {
+    padding: 26px 14px;
+  }
+
+  .srp-header,
+  .srp-body {
+    padding: 22px 20px;
+  }
+
+  .srp-grid {
+    grid-template-columns: 1fr;
+  }
+}
